@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Result</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://www.shutterstock.com/image-illustration/world-diabetes-day-background-template-260nw-2211212113.jpg') center/cover no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        h1 {
+            margin-bottom: 1em;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6em;
+            color: #333;
+            margin-bottom: 1.5em;
+        }
+
+        .no-diabetes {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e74c3c; /* Red color for emphasis */
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Diabetes Prediction Result</h1>
+    </header>
+    <div class="container">
+        <p class="no-diabetes">{{ result }}</p>
+        <p><a href="/">Go back to home</a></p>
+    </div>
+</body>
+
+</html>

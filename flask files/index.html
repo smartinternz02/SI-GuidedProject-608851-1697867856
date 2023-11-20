@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://wallpaperaccess.com/full/3702037.jpg') center/cover no-repeat;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            width: 48%;
+        }
+
+        input,
+        select {
+            width: calc(48% - 10px);
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Diabetes Prediction</h1>
+    </header>
+    <form action="/predict" method="post">
+        <!-- Age -->
+        <label for="Age">Age:</label>
+        <input type="number" name="Age" value="25" min="1" max="100">
+
+        <!-- Sex -->
+        <label for="Sex">Sex:</label>
+        <select name="Sex">
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+        </select>
+
+        <!-- HighBP -->
+        <label for="HighBP">HighBP:</label>
+        <select name="HighBP">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- BMI -->
+        <label for="BMI">BMI:</label>
+        <input type="number" name="BMI" value="80" min="0" max="100">
+
+        <!-- HighChol -->
+        <label for="HighChol">HighChol:</label>
+        <select name="HighChol">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- CholCheck -->
+        <label for="CholCheck">CholCheck:</label>
+        <select name="CholCheck">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- Smoker -->
+        <label for="Smoker">Smoker:</label>
+        <select name="Smoker">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- Stroke -->
+        <label for="Stroke">Stroke:</label>
+        <select name="Stroke">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+            <option value="2">Unknown</option>
+        </select>
+
+        <!-- HeartDiseaseorAttack -->
+        <label for="HeartDiseaseorAttack">Heart Disease or Attack:</label>
+        <select name="HeartDiseaseorAttack">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- PhysActivity -->
+        <label for="PhysActivity">Physical Activity:</label>
+        <select name="PhysActivity">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- Fruits -->
+        <label for="Fruits">Fruits:</label>
+        <select name="Fruits">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- HvyAlcoholConsump -->
+        <label for="HvyAlcoholConsump">Heavy Alcohol Consumption:</label>
+        <select name="HvyAlcoholConsump">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- GenHlth -->
+        <label for="GenHlth">General Health:</label>
+        <select name="GenHlth">
+            <option value="0">Poor</option>
+            <option value="1">Fair</option>
+            <option value="2">Average</option>
+            <option value="3">Good</option>
+            <option value="4">Very Good</option>
+            <option value="5">Excellent</option>
+        </select>
+
+        <!-- DiffWalk -->
+        <label for="DiffWalk">Difficulty Walking:</label>
+        <select name="DiffWalk">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- Education -->
+        <label for="Education">Education:</label>
+        <select name="Education">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- Income -->
+        <label for="Income">Income:</label>
+        <select name="Income">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- AnyHealthcare -->
+        <label for="AnyHealthcare">AnyHealthcare:</label>
+        <select name="AnyHealthcare">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- NoDocbcCost -->
+        <label for="NoDocbcCost">NoDocbcCost:</label>
+        <select name="NoDocbcCost">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- Veggies -->
+        <label for="Veggies">Veggies:</label>
+        <select name="Veggies">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <!-- PhysHlth -->
+        <label for="PhysHlth">PhysHlth:</label>
+        <input type="number" name="PhysHlth" value="80" min="0" max="100">
+
+        <!-- MentHlth -->
+        <label for="MentHlth">MentHlth:</label>
+        <input type="number" name="MentHlth" value="80" min="0" max="100">
+
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+
+</html>
